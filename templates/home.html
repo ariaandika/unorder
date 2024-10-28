@@ -1,0 +1,10 @@
+<div>Askama Dev!</div>
+<button
+  id="btn"
+  hx-get="/"
+  hx-vals='{"count":{{count}}}'
+  hx-select="#btn"
+  hx-swap="outerHTML"
+>
+  Count: {{ count }}
+</button>
