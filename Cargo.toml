@@ -2,6 +2,7 @@
 name = "unorder"
 version = "0.1.0"
 edition = "2021"
+default-run = "server"
 
 [dependencies]
 askama = { version = "0.12.1", features = ["with-axum"] }

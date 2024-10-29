@@ -1,0 +1,23 @@
+{% match self %}
+
+
+{% when Self::Show with (orders) %}
+<ul>
+  {% for order in orders %}
+  <li>{{ order.id }}: {{ order.name }}</li>
+  {% endfor %}
+</ul>
+
+{% when Self::New -%}
+  <form action="">
+
+    <label>
+      <span>Name</span>
+      <input type="text" placeholder="name">
+    </label>
+
+      {{ Form::field("name")|safe }}
+
+  </form>
+
+{% endmatch %}
