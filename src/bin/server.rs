@@ -10,7 +10,7 @@ async fn main() -> io::Result<()> {
     let tcp = TcpListener::bind("localhost:3000").await?;
 
     let route = Router::new()
-        .route("/login", get(auth::Views::login))
+        .route("/login", get(auth::Views::view).post(auth::Views::login))
         .nest(
             "/orders",
             Router::new()

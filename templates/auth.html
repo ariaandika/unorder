@@ -1,0 +1,21 @@
+{% match self %}
+
+{% when Self::Login %}
+<form id="login" hx-post="/login" hx-swap="none">
+  <label>
+    <span>Phone:</span>
+    <input name="phone">
+  </label>
+  <label>
+    <span>Password:</span>
+    <input id="password" name="password" type="password">
+  </label>
+  <button>Submit</button>
+  <div id="error"></div>
+</form>
+
+{% when Self::Err with (msg) %}
+<div id="error" hx-swap-oob="outerHTML:#error">{{ msg }}</div>
+<input id="password" name="password" type="password" hx-swap-oob="outerHTML:#password">
+
+{% endmatch %}
