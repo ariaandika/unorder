@@ -17,7 +17,8 @@ async fn main() -> io::Result<()> {
                 .route("/", get(orders::Views::show))
                 .route("/new", get(orders::Views::new)),
         )
-        .route_service("/hx.js", ServeFile::new("target/hx.js"));
+        .route_service("/hx.js", ServeFile::new("target/hx.js"))
+        .route_service("/tw.css", ServeFile::new("target/tw.css"));
 
     axum::serve(tcp, route).await
 }
