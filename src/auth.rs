@@ -22,7 +22,6 @@ impl Views {
         render: RootRenderer,
         Form(form): Form<Login>
     ) -> Ready<Root<Self>> {
-        std::thread::sleep(std::time::Duration::from_secs(2));
         println!("Result: {form:?}");
         ready(render.render(Self::Err(form.phone)))
     }
