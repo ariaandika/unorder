@@ -1,7 +1,0 @@
-{
-  "name": "templates",
-  "type": "module",
-  "dependencies": {
-    "tailwindcss": "^3.4.14"
-  }
-}

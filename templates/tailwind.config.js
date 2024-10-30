@@ -1,7 +1,14 @@
-/** @type {import('tailwindcss').Config} */
 export default {
-  content: ["./*.html","./components/*.html"],
-  theme: { extend: {}, },
-  plugins: [],
-}
+  content: ["./*.html","./templates/**/*.html"],
+  theme: { extend: {} },
+  plugins: [
+    ({ addBase }) => {
+      addBase({
+        ".app": {
+          background: "red",
+        },
+      });
+    },
+  ],
+};
 

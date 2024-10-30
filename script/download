@@ -1,0 +1,11 @@
+#!/bin/bash
+
+echo 'Downloading tailwind cli to ./target/tw'
+curl https://github.com/tailwindlabs/tailwindcss/releases/download/v3.4.14/tailwindcss-linux-x64 -fsSL > ./target/tw
+chmod +x ./target/tw
+
+echo 'Downloading htmx to ./target/hx.js'
+curl https://unpkg.com/htmx.org@2.0.3/dist/htmx.min.js -fsSL > ./target/hx.js
+
+echo 'Ok(())'
+

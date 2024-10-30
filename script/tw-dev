@@ -1,0 +1,10 @@
+#!/bin/bash
+
+if [ ! -f ./target/tw ]; then
+  echo 'Tailwind cli not found in ./target/tw'
+  echo 'run ./script/download to get tailwind cli'
+  exit 1
+fi
+
+./target/tw -o ./target/tw.css -c ./templates/tailwind.config.js --watch
+
