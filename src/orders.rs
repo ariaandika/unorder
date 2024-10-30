@@ -1,4 +1,4 @@
-use crate::views::form::Form;
+use crate::{layout::{Root, RootRenderer}, views::form::Form};
 use std::future::{ready, Ready};
 
 use askama::Template;
@@ -11,12 +11,12 @@ pub enum Views {
 }
 
 impl Views {
-    pub fn show() -> Ready<Self> {
-        ready(Self::Show(vec![]))
+    pub fn show(render: RootRenderer) -> Ready<Root<Self>> {
+        ready(render.render(Self::Show(vec![])))
     }
 
-    pub fn new() -> Ready<Self> {
-        ready(Self::New)
+    pub fn new(render: RootRenderer) -> Ready<Root<Self>> {
+        ready(render.render(Self::New))
     }
 }
 
